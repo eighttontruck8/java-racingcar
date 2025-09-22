@@ -33,6 +33,7 @@ public class Application {
         //3. 게임 실행
         Game game = new Game();
         for(int i = 0; i < Counts; i++){
+            System.out.println("");
             System.out.println( "--"+ (i+1) +"번째 시도--");
             //각 라운드 경주 진행
             game.runRound(cars);
@@ -41,8 +42,8 @@ public class Application {
             game.printRound(cars);
         }
         //게임 끝! 결과 출력
-        game.checkFinalPosition();
-        game.printWinner();
+//        game.checkFinalPosition();
+//        game.printWinner();
 
     }
     //2-1. 시도 횟수 검증(임의 규칙 생성)

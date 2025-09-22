@@ -34,6 +34,13 @@ public class Car {
     public int getPosition() {
         return position;
     }
+
+    public StringBuffer printPosition() { //String으로는 문자열 추가가 어려움. buffer또는 builder를 사용해야함.
+        StringBuffer sb = new StringBuffer();
+        sb.append("-".repeat(Math.max(0, position))); //for문 대신 string.repeat로 변경?
+        return sb;
+    }
+
     //4 이상이면 전진
     void moveIf(int num) {
         if (num >= 4) {

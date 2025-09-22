@@ -20,19 +20,19 @@ public class Game { //게임 진행 클래스
     //라운드 결과 출력(라운드마다 실행!)
     public void printRound(Car[] cars){
         for (Car car : cars) {
-            System.out.println(car.getName() + " : " + car.getPosition());
+            System.out.println(car.getName() + " : " + car.printPosition());
         }
     }
-    public void checkFinalPosition(Car[] cars){
-        for (Car car : cars) {
-
-        }
-    }
-    public void printWinner(Car[] cars){
-        for (Car car : cars) {
-            System.out.println(max()
-        }
-    }
+//    public void checkFinalPosition(Car[] cars){
+//        for (Car car : cars) {
+//
+//        }
+//    }
+//    public void printWinner(Car[] cars){
+//        for (Car car : cars) {
+//            System.out.println(max()
+//        }
+//    }
 
 
 }

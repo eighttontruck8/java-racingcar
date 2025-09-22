@@ -35,12 +35,12 @@ class CarTest {
 //                .isInstanceOf(IllegalArgumentException.class);
 //    }
 
-    @Test
-    void 자동차는_숫자가_4이상일때_전진() { //테스트는 경계값을 기준으로 설정
-        Car car = new Car("test1");
-        car.moveIf(4);
-        assertThat(???).isEqualTo(???);
-    }
+//    @Test
+//    void 자동차는_숫자가_4이상일때_전진() { //테스트는 경계값을 기준으로 설정
+//        Car car = new Car("test1");
+//        car.moveIf(4);
+//        assertThat(???).isEqualTo(???);
+//    }
 
     @Test
     void 자동차는_숫자가_3이하면_정지() {
