@@ -29,26 +29,26 @@ class CarTest {
     }
 
     //2번
+//    @Test
+//    void 게임횟수는_1미만이면_예외발생() {
+//        assertThatThrownBy(() -> new Car("1"))
+//                .isInstanceOf(IllegalArgumentException.class);
+//    }
+
     @Test
-    void 게임횟수는_1미만이면_예외발생() {
-        assertThatThrownBy(() -> new Car("1"))
-                .isInstanceOf(IllegalArgumentException.class);
+    void 자동차는_숫자가_4이상일때_전진() { //테스트는 경계값을 기준으로 설정
+        Car car = new Car("test1");
+        car.moveIf(4);
+        assertThat(???).isEqualTo(???);
+    }
+
+    @Test
+    void 자동차는_숫자가_3이하면_정지() {
+        Car car = new Car("test1");
+
+        car.moveIf(3); // 3 이하 → 멈춤
+
+        // 자동차의 위치가 0인지 검증
+        // assertThat(???).isEqualTo(???);
     }
 }
-
-//    @Test
-//    void 자동차는_숫자가_4이상일때_전진(){ //테스트는 경계값을 기준으로 설정
-//        Car car = new Car("test1");
-//        car.moveIf(4);
-//
-//    }
-//    @Test
-//    void 자동차는_숫자가_3이하면_정지() {
-//        Car car = new Car("test1");
-//
-//        car.moveIf(3); // 3 이하 → 멈춤
-//
-//        // 자동차의 위치가 0인지 검증
-//        // assertThat(???).isEqualTo(???);
-//    }
-

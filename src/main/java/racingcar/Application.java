@@ -19,7 +19,7 @@ public class Application {
             cars[i] = new Car(carNames[i]);
         }
 
-        //체킹
+        //공백 제거 체킹
         for (Car car : cars) {
             System.out.println("참가자 : " + car.getName());
         }
@@ -28,12 +28,21 @@ public class Application {
         String tryCounts = Console.readLine(); //readLine은 String으로 받아야 함. (int 불가x)
 
         int Counts = Application.validateTryCount(tryCounts);
+        System.out.println("< 게임 실행 결과 >");
 
+        //3. 게임 실행
+        Game game = new Game();
         for(int i = 0; i < Counts; i++){
             System.out.println( "--"+ (i+1) +"번째 시도--");
-            // 자동차 게임 진행
-        }
+            //각 라운드 경주 진행
+            game.runRound(cars);
 
+            //라운드 별 결과 출력
+            game.printRound(cars);
+        }
+        //게임 끝! 결과 출력
+        game.checkFinalPosition();
+        game.printWinner();
 
     }
     //2-1. 시도 횟수 검증(임의 규칙 생성)
@@ -51,4 +60,6 @@ public class Application {
         }
         return num ;
     }
+
+
 }

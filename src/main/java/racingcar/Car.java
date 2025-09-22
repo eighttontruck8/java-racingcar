@@ -1,16 +1,18 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class Car {
 
     private String name;
-    private int position = 0 ;
+    private int position = 0; //초기화
 
     // 생성자
-    public Car(String name){
+    public Car(String name) {
         this.name = validateName(name);
     }
 
-    private String validateName(String name){ //필드는 private 궈장
+    private String validateName(String name) { //필드는 private 궈장
         // TODO: 1. null 체크
         if (name == null) throw new IllegalArgumentException("이름을 입력해주세요.");
 
@@ -25,15 +27,18 @@ public class Car {
         return s;
     }
 
-    public String getName(){ return name;}
+    public String getName() {
+        return name;
+    }
 
+    public int getPosition() {
+        return position;
+    }
+    //4 이상이면 전진
+    void moveIf(int num) {
+        if (num >= 4) {
+            position++;
+        }
+    }
 
-//    public int getPosition(){ return position;}
-
-
-//    void moveIf(int num){
-//        if (num >= 4){
-//            position++;
-//        }
-//    }
 }
