@@ -9,9 +9,6 @@ public class Application {
         System.out.println("경주할 자동차 이름을 입력하세요. (이름은 쉼표(,) 기준으로 구분합니다.)");
         String participations = Console.readLine();
 
-        System.out.println("시도할 회수는 몇 회입니까?");
-        String tryCounts = Console.readLine(); //readLine은 String으로 받아야 함. (int 불가x)
-
         //1-1. 이름 나누기
         String[] carNames = participations.split(","); //String을 콤마를 기준으로 나누어 리스트로 변환
 
@@ -26,5 +23,32 @@ public class Application {
         for (Car car : cars) {
             System.out.println("참가자 : " + car.getName());
         }
+        // 2. 시도 횟수 입력
+        System.out.println("시도할 회수는 몇 회입니까?");
+        String tryCounts = Console.readLine(); //readLine은 String으로 받아야 함. (int 불가x)
+
+        int Counts = Application.validateTryCount(tryCounts);
+
+        for(int i = 0; i < Counts; i++){
+            System.out.println( "--"+ (i+1) +"번째 시도--");
+            // 자동차 게임 진행
+        }
+
+
+    }
+    //2-1. 시도 횟수 검증(임의 규칙 생성)
+    public static int validateTryCount(String tryCounts){
+        // 게임 횟수는 1번 이상일 것
+        int num = Integer.parseInt(tryCounts);
+
+        if (num < 1){
+            throw new IllegalArgumentException("게임 횟수는 최소 1번이어야 합니다.");
+        }
+
+        // 게임 횟수는 10번 이하일 것
+        if (num > 10){
+            throw new IllegalArgumentException("게임 횟수는 10회 이하여야 합니다.");
+        }
+        return num ;
     }
 }
