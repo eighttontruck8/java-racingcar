@@ -49,4 +49,6 @@ class CarTest {
         car.moveIf(3); // 3 이하 → 멈춤
         assertThat(car.getPosition()).isEqualTo(0); // 자동차의 위치가 0인지 검증
     }
+
+
 }

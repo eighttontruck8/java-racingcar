@@ -26,13 +26,13 @@ public class Application {
         String tryCounts = Console.readLine(); //readLine은 String으로 받아야 함. (int 불가x)
 
         int Counts = Application.validateTryCount(tryCounts);
-        System.out.println("[게임 실행 결과]");
+        //System.out.println("[게임 실행 결과]");
 
         //3. 게임 실행
         Game game = new Game();
         for(int i = 0; i < Counts; i++){
-            System.out.println("");
-            System.out.println( "["+ (i+1) +"번째 시도]");
+//            System.out.println("");
+//            System.out.println( "["+ (i+1) +"번째 시도]");
             //각 라운드 경주 진행
             game.runRound(cars);
 

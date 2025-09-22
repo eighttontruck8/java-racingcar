@@ -56,7 +56,9 @@ public class Game { //게임 진행 클래스
         return winners;
     }
     public void printWinner(Car[] cars){
-        System.out.println("<최종 우승자> :"+ checkWinner(cars));
+//        System.out.println("<최종 우승자> :"+ checkWinner(cars));
+          System.out.println("최종 우승자 : " + checkWinner(cars));
+
     }
 }
 
