@@ -1,7 +1,4 @@
 package racingcar;
-
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class Car {
 
     private String name;
@@ -12,7 +9,7 @@ public class Car {
         this.name = validateName(name);
     }
 
-    private String validateName(String name) { //필드는 private 궈장
+    private String validateName(String name) { //필드는 private 권장?
         // TODO: 1. null 체크
         if (name == null) throw new IllegalArgumentException("이름을 입력해주세요.");
 
@@ -28,11 +25,15 @@ public class Car {
     public String getName() { return name; }
     public int getPosition() { return position; }
 
-    public StringBuffer printPosition() { //String으로는 문자열 추가가 어려움. buffer또는 builder를 사용해야함.
-        StringBuffer sb = new StringBuffer();
-        sb.append("-".repeat(Math.max(0, position))); //for문 대신 string.repeat로 변경?
+    public StringBuilder printPosition() { //String으로는 문자열 추가가 어려움. buffer또는 builder를 사용해야함.
+        StringBuilder sb = new StringBuilder();
+        sb.append("-".repeat(Math.max(0, position))); //for문 대신 string.repeat로 변경
         return sb;
     }
+//    public String printPosition() { //String으로는 문자열 추가가 어려움. buffer또는 builder를 사용해야함.
+//        return "-".repeat(position);
+//    }
+
     //4 이상이면 전진
     void moveIf(int num) { if (num >= 4) { position++; } }
 }

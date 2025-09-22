@@ -31,7 +31,7 @@ public class Application {
         //3. 게임 실행
         Game game = new Game();
         for(int i = 0; i < Counts; i++){
-//            System.out.println("");
+            System.out.println("");
 //            System.out.println( "["+ (i+1) +"번째 시도]");
             //각 라운드 경주 진행
             game.runRound(cars);
@@ -49,7 +49,12 @@ public class Application {
     //2-1. 시도 횟수 검증(임의 규칙 생성)
     public static int validateTryCount(String tryCounts){
         // 게임 횟수는 1번 이상일 것
-        int num = Integer.parseInt(tryCounts);
+        int num ;
+        try {
+            num = Integer.parseInt(tryCounts);
+        } catch(NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다.");
+        }
         if (num < 1){
             throw new IllegalArgumentException("게임 횟수는 최소 1번이어야 합니다.");
         }

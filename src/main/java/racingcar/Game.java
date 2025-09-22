@@ -42,7 +42,7 @@ public class Game { //게임 진행 클래스
             }
             //[2] max와 동일하면 초기화는 하지 않고 우승자 후보 추가 입력
             else if (car.getPosition() == maxPosition) {
-                winners.append(", ");
+                if (winners.length() > 0) { winners.append(", ");}
                 winners.append(car.getName());
             }
         }
