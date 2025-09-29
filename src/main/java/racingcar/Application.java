@@ -24,20 +24,19 @@ public class Application {
 
         // 2. 시도 횟수 입력
         System.out.println("시도할 회수는 몇 회입니까?");
-        String tryCounts = Console.readLine(); //readLine은 String으로 받아야 함. (int 불가x)
+        String tryCounts = Console.readLine(); // readLine은 String으로 받아야 함. (int 불가x)
 
         int counts = Application.validateTryCount(tryCounts); // 변수 시작 소문자로 수정
-        // System.out.println("[게임 실행 결과]");
 
         // 3. 게임 실행
         Game game = new Game();
         for(int i = 0; i < counts; i++){
             System.out.println();
             System.out.println( "["+ (i+1) +"번째 시도]");
-            //각 라운드 경주 진행
+            // 각 라운드 경주 진행
             game.runRound(cars);
 
-            //3-1. 라운드 별 결과 출력
+            // 3-1. 라운드 별 결과 출력
             game.printRound(cars);
         }
         // 4. 게임 끝! 결과 출력
@@ -46,7 +45,6 @@ public class Application {
         // 4-2.
         game.printWinner(cars);
     }
-
 
     private static final int minGameTry = 1;
     private static final int maxGameTry = 10;
@@ -72,5 +70,4 @@ public class Application {
         }
         return num ;
     }
-
 }

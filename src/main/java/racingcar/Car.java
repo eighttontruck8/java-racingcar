@@ -12,7 +12,7 @@ public class Car {
         this.name = validateName(name);
     }
 
-    private String validateName(String name) { //필드는 private 권장?
+    private String validateName(String name) {
         // 1. null 체크
         if (name == null) throw new IllegalArgumentException("이름을 입력해주세요.");
 
