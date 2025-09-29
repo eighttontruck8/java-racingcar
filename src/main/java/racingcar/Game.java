@@ -21,8 +21,14 @@ public class Game { // 게임 진행 클래스
     public void printRound(Car[] cars){
         for (Car car : cars) {
             // 단순히 getPosition으로 숫자만 출력하는게 아님! 현재 위치를 '-' 이용해서 출력하기
-            System.out.println(car.getName() + " : " + car.printPosition());
+            String result = printPosition(car.getPosition());
+            System.out.println(car.getName() + " : " + result);
         }
+    }
+
+    // SRP(단일책임원칙) : 메서드 위치 변경 (Car -> Game)
+    public String printPosition(int position) { // 생각해보니 buffer를 사용하지 않아도 됨... return을 String으로 변경
+        return "-".repeat(position);
     }
     // 4. 게임 끝!
 

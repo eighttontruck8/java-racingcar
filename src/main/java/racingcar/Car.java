@@ -28,9 +28,7 @@ public class Car {
     public String getName() { return name; }
     public int getPosition() { return position; }
 
-    public String printPosition() { // 생각해보니 buffer를 사용하지 않아도 됨... return을 String으로 변경
-        return "-".repeat(position);
-    }
+
 
     //4 이상이면 전진
     void moveIf(int num) { if (num >= 4) { position++; } }
